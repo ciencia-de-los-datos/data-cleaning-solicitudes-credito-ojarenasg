@@ -9,8 +9,16 @@ correctamente. Tenga en cuenta datos faltantes y duplicados.
 import pandas as pd
 
 
+import pandas as pd
+
 def clean_data():
+
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
+
+    #
+    # Inserte su código aquí
+    #
+    
     df.dropna(inplace=True)
     df["sexo"] = df["sexo"].apply(lambda x: str(x).lower().strip())
     df["tipo_de_emprendimiento"] = df["tipo_de_emprendimiento"].apply(lambda x: str(x).lower().strip())
@@ -25,5 +33,6 @@ def clean_data():
     df.drop(['Unnamed: 0'], axis=1,inplace=True)
     df.drop_duplicates(inplace=True)
     df.dropna(inplace=True)
+    
     return df
 
