@@ -10,7 +10,6 @@ import pandas as pd
 
 
 def clean_data():
-
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
     df.dropna(inplace=True)
     df["sexo"] = df["sexo"].apply(lambda x: str(x).lower().strip())
@@ -26,6 +25,5 @@ def clean_data():
     df.drop(['Unnamed: 0'], axis=1,inplace=True)
     df.drop_duplicates(inplace=True)
     df.dropna(inplace=True)
-    
     return df
 
